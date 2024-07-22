@@ -1,0 +1,42 @@
+{
+  "name": "taobao订单导出",
+  "version": "1.2.3",
+  "description": "导出淘宝订单列表为表格，可以直接粘贴到excel等表格内",
+  "manifest_version": 3,
+  "permissions": [
+    "clipboardWrite",
+    "declarativeContent",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://buyertrade.taobao.com/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://buyertrade.taobao.com/*"
+      ],
+      "js": [
+        "extract/taobao.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  }
+}
